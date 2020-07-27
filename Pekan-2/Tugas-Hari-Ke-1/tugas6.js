@@ -123,15 +123,15 @@ class Clock {
         var date = new Date()
 
         var hours = date.getHours()
-        if (hours < 10) hours = '0' + hours;
+        if (hours < 10) hours = '0' + hours
   
-        var mins = date.getMinutes();
-        if (mins < 10) mins = '0' + mins;
+        var mins = date.getMinutes()
+        if (mins < 10) mins = '0' + mins
     
-        var secs = date.getSeconds();
-        if (secs < 10) secs = '0' + secs;
+        var secs = date.getSeconds()
+        if (secs < 10) secs = '0' + secs
 
-        var output = this.template.replace('h', hours).replace('m', mins).replace('s', secs);
+        var output = this.template.replace('h', hours).replace('m', mins).replace('s', secs)
 
         console.log(output)
     }
@@ -142,7 +142,8 @@ class Clock {
 
     start() {
         this.render()
-        this.timer = setInterval(() => this.render(),1000)
+        var t = this
+        this.timer = setInterval(function(){t.render()},1000)
     }
 }
   
